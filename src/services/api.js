@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000",   // ✔ CORRECT
+  baseURL: "https://portfolio-cms-backend-new.onrender.com",   // ✔ CORRECT
 });
 
 API.interceptors.request.use((req) => {
