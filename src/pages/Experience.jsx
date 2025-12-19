@@ -14,13 +14,13 @@ export default function Experience() {
   }, []);
 
   const fetchData = async () => {
-    const res = await API.get("/experience");
+    const res = await API.get("/api/experience");
     setItems(res.data);
   };
 
   const add = async (e) => {
     e.preventDefault();
-    await API.post("/experience", { role, company, duration, details });
+    await API.post("/api/experience", { role, company, duration, details });
     setRole("");
     setCompany("");
     setDuration("");
@@ -29,7 +29,7 @@ export default function Experience() {
   };
 
   const del = async (id) => {
-    await API.delete(`/experience/${id}`);
+    await API.delete(`/api/experience/${id}`);
     fetchData();
   };
 

@@ -11,12 +11,12 @@ export default function AboutSettings() {
   });
 
   useEffect(() => {
-    API.get("/about").then(res => setInfo(res.data));
+    API.get("/api/about").then(res => setInfo(res.data));
   }, []);
 
   const saveData = async (e) => {
     e.preventDefault();
-    await API.put("/about", info);
+    await API.put("/api/about", info);
     alert("About Updated Successfully");
   };
 

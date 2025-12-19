@@ -12,12 +12,12 @@ export default function ContactSettings() {
   });
 
   useEffect(() => {
-    API.get("/contact").then(res => setInfo(res.data));
+    API.get("/api/contact").then(res => setInfo(res.data));
   }, []);
 
   const saveData = async (e) => {
     e.preventDefault();
-    await API.put("/contact", info);
+    await API.put("/api/contact", info);
     alert("Contact Updated");
   };
 
