@@ -12,20 +12,20 @@ export default function Achievements() {
   }, []);
 
   const fetchAchievements = async () => {
-    const res = await API.get("/api/achievements");
+    const res = await API.get("/achievements");
     setItems(res.data);
   };
 
   const add = async (e) => {
     e.preventDefault();
-    await API.post("/api/achievements", { title, year });
+    await API.post("/achievements", { title, year });
     setTitle("");
     setYear("");
     fetchAchievements();
   };
 
   const del = async (id) => {
-    await API.delete(`/api/achievements/${id}`);
+    await API.delete(`/achievements/${id}`);
     fetchAchievements();
   };
 

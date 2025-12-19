@@ -18,14 +18,14 @@ export default function Projects() {
   }, []);
 
   const fetchProjects = async () => {
-    const res = await API.get("/api/projects");
+    const res = await API.get("/projects");
     setProjects(res.data);
   };
 
   const addProject = async (e) => {
     e.preventDefault();
 
-    await API.post("/api/projects", {
+    await API.post("/projects", {
       title,
       description,
       tech_stack: techStack,
@@ -43,7 +43,7 @@ export default function Projects() {
   };
 
   const deleteProject = async (id) => {
-    await API.delete(`/api/projects/${id}`);
+    await API.delete(`/projects/${id}`);
     fetchProjects();
   };
 

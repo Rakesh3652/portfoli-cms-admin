@@ -11,13 +11,13 @@ export default function Education() {
   useEffect(()=>{ fetchData(); },[]);
   
   const fetchData = async()=> {
-    const res = await API.get("/api/education");
+    const res = await API.get("/education");
     setItems(res.data);
   };
 
   const add = async(e)=>{
     e.preventDefault();
-    await API.post("/api/education",{ degree, institution, year });
+    await API.post("/education",{ degree, institution, year });
     setDegree(""); 
     setInstitution(""); 
     setYear("");
@@ -25,7 +25,7 @@ export default function Education() {
   };
 
   const del = async(id)=>{ 
-    await API.delete(`/api/education/${id}`); 
+    await API.delete(`/education/${id}`); 
     fetchData(); 
   };
 
