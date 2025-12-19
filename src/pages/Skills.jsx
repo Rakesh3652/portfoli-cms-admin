@@ -13,13 +13,13 @@ export default function Skills() {
   }, []);
 
   const fetchSkills = async () => {
-    const res = await API.get("/api/skills");
+    const res = await API.get("/skills");
     setSkills(res.data);
   };
 
   const addSkill = async (e) => {
     e.preventDefault();
-    await API.post("/api/skills", { name, level, category });
+    await API.post("/skills", { name, level, category });
     setName("");
     setLevel("");
     setCategory("");
@@ -27,7 +27,7 @@ export default function Skills() {
   };
 
   const deleteSkill = async (id) => {
-    await API.delete(`/api/skills/${id}`);
+    await API.delete(`/skills/${id}`);
     fetchSkills();
   };
 

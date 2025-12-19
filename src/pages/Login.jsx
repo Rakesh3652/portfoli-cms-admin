@@ -10,7 +10,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await API.post("/api/auth/login", {
+      const res = await API.post("/auth/login", {
         email: email.trim().toLowerCase(),
         password: password.trim(),
       });
